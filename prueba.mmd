@@ -1,32 +1,42 @@
 graph TD
     subgraph "Fuentes de Datos"
-        A[Sistema de Reservas de Baleària]
-        B[Datos Históricos de Ventas]
-        C[Datos Externos <br> (eventos, festivos, clima)]
+        A["Sistema de Reservas de Baleària"]
+        B["Datos Históricos de Ventas"]
+        C["Datos Externos
+        (eventos, festivos, clima)"]
     end
 
     subgraph "Ingesta y Procesamiento en Google Cloud"
-        D[Pub/Sub <br> (Captura de eventos en tiempo real)]
-        E[Cloud Dataflow <br> (Procesamiento Batch de históricos)]
+        D["Pub/Sub
+        (Captura de eventos en tiempo real)"]
+        E["Cloud Dataflow
+        (Procesamiento Batch de históricos)"]
     end
 
     subgraph "Almacenamiento"
-        F[Cloud Storage <br> (Data Lake para datos brutos)]
-        G[BigQuery <br> (Data Warehouse para datos consolidados)]
+        F["Cloud Storage
+        (Data Lake para datos brutos)"]
+        G["BigQuery
+        (Data Warehouse para datos consolidados)"]
     end
 
     subgraph "Inteligencia Artificial y Orquestación"
-        H[Vertex AI <br> (Entrenamiento y despliegue del modelo de ML)]
-        I[Cloud Composer <br> (Orquestación del reentrenamiento periódico)]
+        H["Vertex AI
+        (Entrenamiento y despliegue del modelo de ML)"]
+        I["Cloud Composer
+        (Orquestación del reentrenamiento periódico)"]
     end
 
     subgraph "Capa de Servicio (API)"
-        J[Cloud Run <br> (API REST para precios)]
-        K[Vertex AI Endpoint <br> (Punto de acceso al modelo)]
+        J["Cloud Run
+        (API REST para precios)"]
+        K["Vertex AI Endpoint
+        (Punto de acceso al modelo)"]
     end
 
     subgraph "Consumidor"
-        L[Sistema de Reservas de Baleària <br> (Solicita precio dinámico)]
+        L["Sistema de Reservas de Baleària
+        (Solicita precio dinámico)"]
     end
 
     %% Conexiones
@@ -45,6 +55,8 @@ graph TD
 
     %% Componentes transversales
     subgraph "Gestión y Seguridad"
-        M[Terraform <br> (Infraestructura como Código)]
-        N[IAM <br> (Gestión de Accesos y Seguridad)]
+        M["Terraform
+        (Infraestructura como Código)"]
+        N["IAM
+        (Gestión de Accesos y Seguridad)"]
     end
